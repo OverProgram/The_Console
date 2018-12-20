@@ -1,7 +1,7 @@
 var text = document.getElementById("text");
 var Console = {
     Start : function() {
-        window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer 1/Layer1.html";
+        window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer_1/Layer_1.html";
     }
 }
 
@@ -28,7 +28,7 @@ function GetCookie(cname) {
     return "";
 }
 
-function ImThere(name) {
+function imThere(name) {
     SetCookie("playerName", name, 30);
     var playerName = name;
     text.innerHTML = "Oh thank god someone found me!<br>" + playerName + ", is it? thank you so much for doing this.<br>" +
