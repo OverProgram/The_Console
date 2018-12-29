@@ -1,0 +1,12 @@
+.Texts {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+}
+
+h1#title {
+    text-align: center;
+}
+
+body {
+    background-color: darkolivegreen;
+}

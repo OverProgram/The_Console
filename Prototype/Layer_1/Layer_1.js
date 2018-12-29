@@ -40,6 +40,10 @@ function nextLayer() {
     window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer_2/Layer_2.html";
 }
 
+function continueHint() {
+    text.innerHTML+= "<br>Okay, I got something. You need to connect the squares that are the same color. How do you do that? Well I'm not sure."
+}
+
 var canvas = document.getElementById("canvas");
 var text = document.getElementById("text");
 var ctx = canvas.getContext("2d");
@@ -124,4 +128,20 @@ var lock = {
         }
     }
 };
+var speak = {
+    hint() {
+        text.innerHTML = "Ok, i'll try to dig in the source code and find something.";
+        setTimeout(continueHint, 3000);
+    },
+
+    whatDoIDo() {
+        if (hasDecoded) {
+            text.innerHTML = "Just type theConsole.delveDeeper() to get to the next lock!";
+        } else {
+            text.innerHTML = "all of the commands you need are in the object <i>lock</i>. Just see what commands are in there" +
+            "and try to figure out what you need to do.<br>If you want to talk to me or ask for hints just" +
+            "use the object <i>speak</i>";
+        }
+    }
+}
 draw();
