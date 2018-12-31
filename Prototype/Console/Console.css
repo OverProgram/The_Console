@@ -2,9 +2,18 @@ body {
     background-color: black;
 }
 
+div#console {
+    position: relative;
+    display: inline-block;  
+}
+
 p {
     color: greenyellow;
     font-family: 'Lucida Console', ariel;
+}
+
+.error {
+    color: red;
 }
 
 textarea {

@@ -2,7 +2,11 @@ var text = document.getElementById("text");
 var theConsole = document.getElementById("console");
 var hasResponded = false;
 function start() {
-    window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer_1/Layer_1.html";
+    if (hasResponded){
+        window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer_1/Layer_1.html";
+    } else {
+        theConsole.contentWindow.postMessage("err Access denied", "*");
+    }
 }
 
 function imThere(name) {
@@ -20,9 +24,13 @@ function imThere(name) {
 window.addEventListener("message", function(event) {
     if (event.data === "theConsole.start()") {
         start();
-    }
-
-    if (event.data.includes("speak.imThere")) {
-        imThere(event.data.substring(14, event.data.length - 1));
+    } else if (event.data.includes("speak.imThere")) {
+        if (event.data.substring(14, event.data.length - 1) == "") {
+            theConsole.contentWindow.postMessage("paraerr", "*");
+        } else {
+            imThere(event.data.substring(14, event.data.length - 1));
+        }
+    } else {
+        theConsole.contentWindow.postMessage("error", "*");
     }
 }, false);
