@@ -6,7 +6,7 @@ var currantIndex;
 var inputEnabled = true;
 function onKeyPress(e) {
     if (e.which == 13) {
-        window.parent.postMessage(input.value, "*");
+        window.parent.postMessage("con " + input.value.toString(), "*");
         prevCommands.push(input.value);
         printToConsole(input.value, "input");
         commandIndex++;
@@ -45,7 +45,7 @@ function printToConsole(output, format = "") {
 }
 
 window.addEventListener("message", function(event) {
-    if (event.data.substring(0, 6) === "print ") {
+    if (event.data.toString().substring(0, 6) === "print ") {
         printToConsole(event.data.substring(6, event.data.length));
     } else if (event.data.substring(0, 4) === "err ") {
         printToConsole(event.data.substring(4, event.data.length), "err");

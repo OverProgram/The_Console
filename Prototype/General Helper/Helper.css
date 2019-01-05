@@ -1,0 +1,38 @@
+body {
+    background-color: #000;
+}
+
+.tab {
+    overflow: hidden;
+    background-color: #000000;
+}
+  
+.tab button {
+    background-color: inherit;
+    color: greenyellow;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+  
+.tab button:hover {
+    background-color: #555;
+}
+  
+.tab button.active {
+    background-color: #777;
+}
+  
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #000;
+    border-top: none;
+}
+
+.tabcontent iframe {
+    border: none;
+}
+  

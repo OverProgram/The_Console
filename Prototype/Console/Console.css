@@ -10,6 +10,7 @@ div#console {
 p {
     color: greenyellow;
     font-family: 'Lucida Console', ariel;
+    white-space: nowrap;
 }
 
 .error {

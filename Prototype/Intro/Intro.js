@@ -3,7 +3,11 @@ var theConsole = document.getElementById("console");
 var hasResponded = false;
 function start() {
     if (hasResponded){
-        window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer_1/Layer_1.html";
+        theConsole.contentWindow.postMessage("print Beginning transfer...", "*");
+        theConsole.contentWindow.postMessage("disable", "*");
+        setTimeout(function(){
+            window.location.href = "file:///C:/Users/tomer/Documents/GitHub/The_Console/Prototype/Layer_1/Layer_1.html";
+        }, 3000);
     } else {
         theConsole.contentWindow.postMessage("err Access denied", "*");
     }
