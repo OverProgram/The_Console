@@ -46,10 +46,10 @@ function continueHint() {
 
 function delveDeeper() {
     if (hasDecoded) {
-        console.log ("Beginning transfer...")
+        theConsole.contentWindow.postMessage ("print Beginning transfer...", "*")
         setTimeout(nextLayer, 1000);
     } else {
-        console.log("Access denied");
+        theConsole.contentWindow.postMessage("print Access denied", "*");
     }
 }
 
@@ -72,12 +72,12 @@ function connectSquares(indexOne, indexTwo) {
     var squareOne = squares[indexOne];
     var squareTwo = squares[indexTwo];
     if (hasDecoded) {
-        console.log("Already deocoded layer");
+        theConsole.contentWindow.postMessage("print Already deocoded layer", "*");
         text.innerHTML = "What are you doing? We already unlocked the layer!";
         return;
     }
     if (isSeeingIndexes){
-        console.log("Illegal action. Try again later.")
+        theConsole.contentWindow.postMessage("print Illegal action. Try again later.", "*")
     }
     if (!hasSeenIndexes) {
         text.innerHTML = "How exactly do you know the indexes? Messing around like this could mess things up!";
@@ -91,7 +91,7 @@ function connectSquares(indexOne, indexTwo) {
         squareOne.hasBeenConnected = true;
         squareTwo.hasBeenConnected = true;
     } else {
-        console.log("One or both of the squares are already connected.");
+        theConsole.contentWindow.postMessage("print One or both of the squares are already connected.", "*");
     }
 }
 
@@ -108,11 +108,11 @@ function submit() {
     }
 
     if (correct) {
-        console.log("Layer decoded.");
+        theConsole.contentWindow.postMessage("print Layer decoded.", "*");
         text.innerHTML = "Yes! You managed to break the first lock!<br>Now just type theConsole.delveDeeper() to get to the next lock!";
         hasDecoded = true;
     } else {
-        console.log("Incorrect.");
+        theConsole.contentWindow.postMessage("print Incorrect.", "*");
     }
 }
 

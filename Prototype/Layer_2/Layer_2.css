@@ -6,3 +6,8 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     color: #000;
 }
+
+iframe#helper {
+    width: 900px;
+    height: 350px;
+}
